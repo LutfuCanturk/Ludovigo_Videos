@@ -1,17 +1,22 @@
 import { motion } from "framer-motion"
 import myPhoto from "../assets/homepageme.png"
+import { div } from "framer-motion/client"
 
-function Hero() {
+
+function Hero({ children }) {
   return (
     <div style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      height: "100vh",
-      padding: "40px",
-      background: "#111",
-      color: "white"
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    height: "100vh",
+    background: "#F2D51C",
+    color: "white",
+    width: "100vw",   // BUNU DEĞİŞTİR
+    margin: 0
     }}>
+
+      
 
       {/*INTERVIEW AREA */}
       <div>
@@ -22,11 +27,9 @@ function Hero() {
       {/*PHOTO DIV*/}
       <div style={{
         width: "100%",
-        height: "100vh",
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "center",
-        border: "5px solid black",
         position: "absolute",
         right: "0"
       }}>
@@ -44,6 +47,7 @@ function Hero() {
       </div>
 
     </div>
+    
   )
 }
 

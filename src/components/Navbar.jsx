@@ -1,24 +1,55 @@
+  import logo from "../assets/LudovigoVideosLogo.png"
+  import { FaInstagram, FaGithub } from "react-icons/fa";
 function Navbar()
 {
-    return (
 
+
+  
+    return (
 <div style={{
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "20px",
-    background: "black",
-    color: "white"
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  padding: "10 40px",
+  background: "#2FA4AB",
+  borderRadius: "30px",
+  height: "60px", 
+  width: "1210px",
+  margin: "0 auto",
+  marginTop: "40px",
+  marginLeft: "50px"
+  
 }}>
 
- <h2> Ludovigo </h2>
+  {/* SOL - LOGO */}
+  <div>
+    
+   <img src={logo} style={{ width:"100px", marginTop:"10px" }} />  </div>
 
- <div>
-    <a href="#">Home</a>
-    <a href="#" style={{marginLeft: "20px"}}>Youtube</a>
-    <a href="#" style={{marginLeft: "20px"}}>Contact</a>
- </div>
+  {/* ORTA - MENÜ */}
+  <div style={{
+  display: "flex",
+  gap: "180px",
+  marginLeft: "-240px",
+  justifyContent: "center",
+  alignItems: "flex-start",
+  flex: 1
+  
+}}>
+  <a className="pixel-btn">Home</a>
+  <a className="pixel-btn">Youtube</a>
+  <a className="pixel-btn">Contact</a>
+</div>
+  <div style={{
+  display: "flex",
+  gap: "5px"
+}}>
+  <a style={{marginLeft: "-150px"}} className="pixel-btn"><FaInstagram /></a>
+  <a style={{marginLeft: "0px"}} className="pixel-btn"><FaGithub /></a>
 </div>
 
-    )
+</div>
+
+  )
 }
 export default Navbar
