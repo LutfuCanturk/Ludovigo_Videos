@@ -225,3 +225,181 @@ body {
     inset 0 2px 0 rgba(255,255,255,0.3),
     inset 0 -2px 0 rgba(0,0,0,0.3);
 }
+/* Ana Konteynır - Arcade Kabin Çerçevesi */
+.arcade-container {
+  padding: 15px;
+  background: #222; /* Kabin rengi */
+  border: 5px solid #d32f2f; /* Klasik Neo Geo kırmızısı */
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 
+    0 0 20px #d32f2f, 
+    inset 0 0 15px #000;
+  display: inline-block;
+}
+
+/* İç Ekran ve Alev Efekti */
+.flame-screen {
+  background: #000;
+  color: #fff;
+  padding: 40px;
+  border: 4px solid #111;
+  position: relative;
+  overflow: hidden;
+  
+  /* Alt taraftan alev ışığı vuruyormuş gibi */
+  box-shadow: inset 0 -20px 40px rgba(255, 69, 0, 0.6);
+}
+
+/* Alevli Kenarlık Efekti */
+.flame-screen::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+  
+  /* Alev renk geçişleri */
+  border-bottom: 8px solid #ff4500;
+  box-shadow: 
+    0 0 15px #ff4500,
+    0 -10px 25px #ff8c00,
+    0 -20px 45px #ff0000;
+    
+  /* Animasyonu başlat */
+  animation: flicker 0.15s infinite;
+  opacity: 0.8;
+}
+
+/* Alevlerin Titreme Animasyonu */
+@keyframes flicker {
+  0% { transform: scaleY(1) translateY(0); opacity: 0.8; }
+  50% { transform: scaleY(1.05) translateY(-2px); opacity: 1; }
+  100% { transform: scaleY(1) translateY(0); opacity: 0.8; }
+}
+
+/* Retro Yazı Tipi (Opsiyonel) */
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px #d400ff;
+}
+
+/* Alev Efekti için Wrapper CSS */
+.arcade-flame-wrapper {
+  /* Klasik Neo Geo kırmızısı dış hat */
+  border: 4px solid #0011ff; 
+  /* Temel bir parlama */
+  box-shadow: 0 0 15px rgba(1, 162, 255, 0.7); 
+  overflow: visible; /* Alevlerin dışarı taşmasına izin ver */
+}
+
+/* Alev katmanını oluşturma (Pseudo-element) */
+.arcade-flame-wrapper::after {
+  content: "";
+  position: absolute;
+  /* Videonun biraz arkasından başlayıp dışarı taşacak şekilde ayarla */
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  
+  /* Arka plan: Alev renkleri gradyanı */
+  background: linear-gradient(0deg, 
+    rgb(0, 183, 255) 0%,   /* Turuncu/Kırmızı */
+    rgba(99, 185, 255, 0.8) 50%, /* Sarımtrak */
+    rgba(255, 0, 0, 0) 100%    /* Şeffaf (üste doğru yok olur) */
+  );
+  
+  /* Köşeleri uyumlu yap */
+  border-radius: 30px;
+  
+  /* Bulanıklık vererek alev hissi yarat */
+  filter: blur(15px);
+  
+  /* Videonun arkasında ama konteynırın içinde kalsın */
+  z-index: 1;
+  
+  /* Animasyonu başlat */
+  animation: flameFlicker 1.5s infinite alternate;
+  
+  /* İlk başta biraz şeffaf yapalım, animasyonla canlanacak */
+  opacity: 0.8;
+  pointer-events: none; /* Videoya tıklamayı engellemesin */
+}
+
+/* Alev Titreme Animasyonu */
+@keyframes flameFlicker {
+  0% {
+    transform: scale(1);
+    filter: blur(15px);
+    opacity: 0.7;
+  }
+  25% {
+    transform: scale(1.02) translateY(-2px);
+    filter: blur(12px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1) translateY(0);
+    filter: blur(18px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: scale(1.03) translateY(-1px);
+    filter: blur(14px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(15px);
+    opacity: 0.7;
+  }
+}
+@font-face {
+  font-family: 'ShifaRame';
+  src: url('/fonts/ShifaRame.ttf') format('truetype');
+}
+
+.hero-title {
+  font-family: 'ShifaRame', sans-serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  
+}
+
+.hero-text {
+  font-family: 'Rubik', sans-serif;
+}
+.video-section {
+  margin-top: 150px;
+  padding: 50px;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.video-section {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video-grid video {
+  width: 250px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+}

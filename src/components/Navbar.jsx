@@ -29,15 +29,17 @@ function Navbar()
   {/* ORTA - MENÜ */}
   <div style={{
   display: "flex",
-  gap: "180px",
-  marginLeft: "-240px",
+  gap: "100px",
+  marginLeft: "-150px",
   justifyContent: "center",
   alignItems: "flex-start",
+  marginBottom: "4px",
   flex: 1
   
 }}>
   <a className="pixel-btn">Home</a>
   <a className="pixel-btn">Youtube</a>
+  <a className="pixel-btn">100 Days 100 Movie</a>
   <a className="pixel-btn">Contact</a>
 </div>
   <div style={{
@@ -50,6 +52,6 @@ function Navbar()
 
 </div>
 
-  )
+    )
 }
 export default Navbar

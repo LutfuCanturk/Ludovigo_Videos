@@ -9,20 +9,53 @@ function Hero({ children }) {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    height: "100vh",
+    minHeight: "100vh",
     background: "#F2D51C",
     color: "white",
-    width: "100vw",   // BUNU DEĞİŞTİR
+    width: "100%",   // BUNU DEĞİŞTİR
     margin: 0
     }}>
 
       
 
       {/*INTERVIEW AREA */}
-      <div>
-        <h1>LUDOVIGO</h1>
-        <p>Video içerikleri üretiyorum</p>
-      </div>
+      
+      <div 
+  className="arcade-flame-wrapper" /* CSS sınıfını ekledik */
+  style={{
+    marginTop: "-280px",
+    width: "800px",
+    marginLeft: "170px",
+    /* Aşağıdaki stiller çerçeve için şart: */
+    position: "relative", 
+    padding: "15px", /* Çerçevenin kalınlığı */
+    background: "#5900ff", /* Kabin rengi */
+    borderRadius: "25px", /* Dış köşeler videodan biraz daha oval */
+    boxSizing: "border-box" /* Padding'in genişliği etkilememesi için */
+  }}
+>
+  <video 
+    src="/Fiver_Video_artıkson_1.mp4"
+    autoPlay 
+    loop 
+    muted 
+    style={{
+      width: "100%",
+      height: "auto",
+      borderRadius: "15px", /* İçerideki videonun köşeleri */
+      display: "block", /* Alt boşluğu alır */
+      position: "relative",
+      zIndex: 2 /* Videonun alevin üzerinde kalmasını sağlar */
+    }}
+    />
+
+  
+</div>
+
+
+
+   
+
 
       {/*PHOTO DIV*/}
       <div style={{
@@ -46,7 +79,43 @@ function Hero({ children }) {
 
       </div>
 
+     <div
+  style={{
+    position: "absolute",
+    top: "85%",
+    left: "25%",
+    transform: "translate(-50%, -50%)",
+    width: "800px",
+    color: "black"
+  }}
+>
+  <h2 className="hero-title">It's Ludvig you can call me Ludovigo</h2>
+
+  <p className="hero-text">
+    I started video editing about 4 years ago with a freelance project. At first, my work wasn’t liked, but instead of giving up, I kept going and improved myself a lot.
+
+Later, I worked at an advertising agency where I was creating content, improving my skills, and helping the business generate strong results and sales.
+
+I can help your business on the social media side by creating infographics, animations, and smooth, engaging edits. I also work on gaming content and storytelling-style videos.
+  </p>
+</div>
+
+{/* VIDEO SECTION */}
+<div className="video-section">
+  <h2 className="section-title">My Works</h2>
+
+  <div className="video-grid">
+    <video src="/video1.mp4" controls />
+    <video src="/video2.mp4" controls />
+    <video src="/video3.mp4" controls />
     </div>
+  </div>
+
+
+      </div>
+
+    
+    
     
   )
 }
