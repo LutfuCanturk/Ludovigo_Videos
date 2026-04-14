@@ -5,16 +5,18 @@ import { div } from "framer-motion/client"
 
 function Hero({ children }) {
   return (
-    <div style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    minHeight: "100vh",
-    background: "#F2D51C",
-    color: "white",
-    width: "100%",   // BUNU DEĞİŞTİR
-    margin: 0
-    }}>
+   <div style={{
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  background: "#F2D51C",
+  color: "white",
+  width: "100%",
+  margin: 0,
+  minHeight: "100vh",
+  position: "relative",
+  paddingBottom: "100px" // alttan biraz boşluk
+}}>
 
       
 
@@ -48,15 +50,7 @@ function Hero({ children }) {
       zIndex: 2 /* Videonun alevin üzerinde kalmasını sağlar */
     }}
     />
-
-  
 </div>
-
-
-
-   
-
-
       {/*PHOTO DIV*/}
       <div style={{
         width: "100%",
@@ -64,7 +58,8 @@ function Hero({ children }) {
         justifyContent: "flex-end",
         alignItems: "center",
         position: "absolute",
-        right: "0"
+        right: "0",
+        marginLeft:"40px"
       }}>
         <motion.img 
           src={myPhoto}
@@ -85,7 +80,7 @@ function Hero({ children }) {
     top: "85%",
     left: "25%",
     transform: "translate(-50%, -50%)",
-    width: "800px",
+    width: "600px",
     color: "black"
   }}
 >
@@ -100,19 +95,10 @@ I can help your business on the social media side by creating infographics, anim
   </p>
 </div>
 
-{/* VIDEO SECTION */}
-<div className="video-section">
-  <h2 className="section-title">My Works</h2>
 
-  <div className="video-grid">
-    <video src="/video1.mp4" controls />
-    <video src="/video2.mp4" controls />
-    <video src="/video3.mp4" controls />
-    </div>
   </div>
 
 
-      </div>
 
     
     

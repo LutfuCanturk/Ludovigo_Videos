@@ -1,6 +1,7 @@
 "Ludovigo Portfolio"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
+import VideoSection from "./components/VideoSection"
 
 function App(){
   return(
@@ -9,6 +10,7 @@ function App(){
     <>
   <Navbar />
   <Hero />
+  <VideoSection />
 </>
   
   )
